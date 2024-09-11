@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; 
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+#background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.card {
+    background-color: #fff;
+    border: 2px solid #00796b; 
+    border-radius: 8px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #007d6f; 
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card.flipped {
+    background-color: #fff;
+    color: #00796b; 
+}
+
+.card:not(.flipped) {
+    background-color: #004d40; 
+    color: transparent;
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+#status {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-over {
+    margin-top: 20px;
+}
+
+#game-over .message {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+#winner {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        height: 80px; 
+        font-size: 1.5rem; 
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+/* Responsive Design */
+
+/* Mobile devices (portrait mode) */
+@media (max-width: 768px) {
+    #backgroundVideo {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+}
+
+/* Extra small devices (phones in landscape) */
+@media (max-width: 480px) {
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .btn {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+}
+
+/* Larger screens (Desktops) */
+@media (min-width: 1025px) {
+    .btn {
+        font-size: 24px;
+        padding: 20px 40px;
+    }
+}

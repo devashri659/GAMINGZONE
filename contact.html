@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-section {
+            width: 90%;
+            max-width: 40rem;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .contact-intro > * + * {
+            margin-top: 1rem;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #1f2937;
+        }
+
+        .contact-description {
+            color: rgb(107, 114, 128);
+            text-align: center;
+        }
+
+        .form-group-container {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+            font-weight: 600;
+        }
+
+        .form-input,
+        .form-textarea {
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            display: flex;
+            width: 100%;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #9ca3af;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 1.5rem;
+            background-color: #3124ca;
+            color: #fff;
+            padding: 14px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: #1e3a8a;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-media a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+
+        .social-media a:hover {
+            color: #1e3a8a;
+        }
+
+        .back-home {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .back-home button {
+            padding: 10px 15px;
+            background-color: #6b7280;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .back-home button:hover {
+            background-color: #374151;
+        }
+
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                font-size: 0.8rem;
+            }
+
+            .form-submit {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+
+            .social-media a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-title {
+                font-size: 1.6rem;
+                line-height: 2rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                font-size: 0.75rem;
+            }
+
+            .form-submit {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+
+            .social-media a {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<section class="contact-section">
+    <div class="contact-intro">
+        <h2 class="contact-title">Contact Us</h2>
+        <p class="contact-description">We would love to hear from you! Please fill out the form below.</p>
+    </div>
+
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="6d72cd40-e52d-4445-a4b3-b31199ada651" />
+        <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+        <input type="hidden" name="from_name" value="My Website" />
+
+        <div class="form-group-container">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" name="name" class="form-input" placeholder="Your name" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" class="form-input" placeholder="Your email" type="email" required />
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-textarea" id="message" name="message" placeholder="Your message" required></textarea>
+            </div>
+        </div>
+        <button class="form-submit" type="submit">Send Message</button>
+    </form>
+
+    <div class="social-media">
+        <a href="https://in.linkedin.com/in/amruta-koparkar-415862294" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/engineeringlife101/" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram">
+        </a>
+        <a href="mailto:amrutakoparkar1985@gmail.com">
+            <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email">
+        </a>
+    </div>
+
+    <div class="back-home">
+        <a href="./index_1.html">
+            <button class="form-submit" type="button">Return to Home</button>
+        </a>
+    </div>
+</section>
+</body>
+</html>
